@@ -4,3 +4,4 @@ matplotlib>=2.0.0
 networkx>=1.11
 ipython
 ipywidgets
+pydotplus
