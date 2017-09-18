@@ -1,5 +1,9 @@
 # MDP Environment for the OpenAI Gym
 
+This Python framework makes it very easy to specify simple MDPs.
+
+[![Build Status](https://travis-ci.org/BlackHC/mdp.svg?branch=master)](https://travis-ci.org/BlackHC/mdp)
+
 ## Installation
 
 To install using pip, use:
