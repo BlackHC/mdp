@@ -1,12 +1,25 @@
 # MDP Environment for the OpenAI Gym
 
-## How to install
+## Installation
 
 To install, using pip:
 
 ```
 pip install blackhc.mdp
 ```
+
+## Whitepaper
+
+A whitepaper is available at <docs/whitepaper.pdf>. Here is a BibTeX entry that you can use in publications:
+```
+@techreport{blackhc.mdp,
+    Author = {Andreas Kirsch},
+    Title = {An MDP environment for the OpenAI Gym},
+    Year = {2017},
+    Url = {http://github.com/BlackHC/mdp/raw/master/docs/whitepaper.pdf}
+}
+```
+<CITE_ME.bib>
 
 ## Introduction
 
