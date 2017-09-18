@@ -2,7 +2,7 @@
 
 ## Installation
 
-To install, using pip:
+To install using pip, use:
 
 ```
 pip install blackhc.mdp
@@ -10,7 +10,7 @@ pip install blackhc.mdp
 
 ## Whitepaper
 
-A whitepaper is available at <docs/whitepaper.pdf>. Here is a BibTeX entry that you can use in publications:
+A whitepaper is available at [docs/whitepaper.pdf](docs/whitepaper.pdf). Here is a BibTeX entry that you can use in publications (or download [CITE_ME.bib](CITE_ME.bib)):
 ```
 @techreport{blackhc.mdp,
     Author = {Andreas Kirsch},
@@ -19,7 +19,7 @@ A whitepaper is available at <docs/whitepaper.pdf>. Here is a BibTeX entry that 
     Url = {http://github.com/BlackHC/mdp/raw/master/docs/whitepaper.pdf}
 }
 ```
-<CITE_ME.bib>
+
 
 ## Introduction
 
