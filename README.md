@@ -111,7 +111,7 @@ mdp.display_mdp(spec)
 ```
 
 <div>
-<img src="one_round_dmdp.png" alt="One round deterministic MDP" width="96" />
+<img src="docs/one_round_dmdp.png" alt="One round deterministic MDP" width="96" />
 </div>
 <b>Figure 1: One round deterministic MDP</b>
 
