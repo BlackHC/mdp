@@ -112,8 +112,8 @@ mdp.display_mdp(spec)
 
 <div>
 <img src="one_round_dmdp.png" alt="One round deterministic MDP" width="96" />
-<b>Figure 1: One round deterministic MDP</b>
 </div>
+<b>Figure 1: One round deterministic MDP</b>
 
 ## Optimal values
 
@@ -149,8 +149,8 @@ while not is_done:
 
 <div>
 <img src="docs/multi_round_nmdp_render.png" alt="env.render() of `example.MULTI_ROUND_NMDP`" width="192" />
-<b>Figure 2: env.render() of `example.MULTI_ROUND_NMDP`</b>
 </div>
+<b>Figure 2: env.render() of `example.MULTI_ROUND_NMDP`</b>
 
 # Examples
 
