@@ -1,10 +1,25 @@
-from collections import defaultdict, OrderedDict
+# Copyright 2017 Andreas Kirsch <blackhc@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import typing
+from collections import defaultdict
 
 import gym
 import gym.spaces
 import networkx as nx
 import numpy as np
-import typing
+
+from blackhc.mdp.version import VERSION as __version__
 
 
 class State(object):
@@ -98,7 +113,7 @@ class MDPSpec(object):
             self.states.append(new_state)
         return self._states[name]
 
-    def action(self, name):
+    def action(self, name=None):
         if not name:
             name = 'A%s' % self.num_actions
 
@@ -317,6 +332,6 @@ def graph_to_png(graph):
     return pydot_graph.create_png()
 
 
-def display_mdp(mdp):
+def display_mdp(mdp: MDPSpec):
     from IPython.display import display, Image
     display(Image(graph_to_png(mdp.to_graph())))

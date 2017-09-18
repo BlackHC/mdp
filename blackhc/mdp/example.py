@@ -1,4 +1,17 @@
-from mdp import dsl
+# Copyright 2017 Andreas Kirsch <blackhc@gmail.com>
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+from blackhc.mdp import dsl
 
 
 # noinspection PyStatementEffect
@@ -84,29 +97,15 @@ def _two_round_nmdp():
 def  _multi_round_nmdp():
     with dsl.new() as mdp:
         start = dsl.state()
-        first = dsl.state()
-        second = dsl.state()
         end = dsl.terminal_state()
 
-        actionA = dsl.action()
-        actionB = dsl.action()
+        start & dsl.action() > dsl.reward(5) | start | end * 2
+        start & dsl.action() > dsl.reward(3) | start * 2 | end
 
-        eitherAction = actionA | actionB
-        eitherState = first | second
-
-        start & actionA > (first * 0.25 | second * 0.75)
-        start & actionB > (first * 0.75 | second * 0.25)
-
-        eitherState & actionA > eitherState
-        first & actionB > (first | second * 2)
-        second & actionB > (first * 2 | second | end)
-
-        first & eitherAction > dsl.reward(3)
-        second & eitherAction > dsl.reward(5)
-
-        dsl.discount(0.9)
+        dsl.discount(0.5)
 
         return mdp.validate()
+
 
 ONE_ROUND_DMDP = _one_round_dmdp()
 TWO_ROUND_DMDP = _two_round_dmdp()
