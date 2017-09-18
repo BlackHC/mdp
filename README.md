@@ -8,6 +8,12 @@ To install using pip, use:
 pip install blackhc.mdp
 ```
 
+To run the tests, use:
+
+```
+python setup.py test
+```
+
 ## Whitepaper
 
 A whitepaper is available at [docs/whitepaper.pdf](docs/whitepaper.pdf). Here is a BibTeX entry that you can use in publications (or download [CITE_ME.bib](CITE_ME.bib)):

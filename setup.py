@@ -92,4 +92,6 @@ setup(
         'dev': ['check-manifest'],
         'test': ['coverage', 'pytest'],
     },
+
+    setup_requires=['pytest-runner'],
 )
