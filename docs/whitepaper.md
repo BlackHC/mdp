@@ -1,9 +1,9 @@
 ---
-title: An MDP environment for the OpenAI Gym
+title: MDP environments for the OpenAI Gym
 author: Andreas Kirsch <blackhc@gmail.com>
 abstract: |
  The OpenAI Gym provides researchers and enthusiasts with simple to use environments for reinforcement learning. Even the simplest environment have a level of complexity that can obfuscate the inner workings of RL approaches and make debugging difficult.
- This whitepaper describes a Python framework that makes it very easy to create simple Markov-Decision-Process environments programmatically by specifying state transitions and rewards of deterministic and non-deterministic MDPs in a domain-specific language in Python. It then presents results and visualizations created with this MDP framework.
+ This whitepaper describes a Python framework^[<https://github.com/BlackHC/mdp>] that makes it very easy to create simple Markov-Decision-Process environments programmatically by specifying state transitions and rewards of deterministic and non-deterministic MDPs in a domain-specific language in Python. It then presents results and visualizations created with this MDP framework.
 link-citations: True
 colorlinks: True
 ---
@@ -149,12 +149,16 @@ while not is_done:
 
 ![env.render() of `example.MULTI_ROUND_NMDP` \label{multi_ndmp}](multi_round_nmdp_render.png){width=2in}
 
-# Examples
+## Examples
 
 The `blackhc.mdp.example` package provides 5 MDPs. Four of them match the ones in `gym.envs.debugging`, and the fifth one is depicted in figure \ref{multi_ndmp}. 
 
 # Contribution
 
 A framework to specify MDPs using a domain-specific language in Python was presented. The MDPs can be visualized in Jupyter notebooks and are compatible with the OpenAI Gym. 
+
+# Acknowledgements
+
+Thanks to OpenAI for developing and providing the OpenAI Gym, and thanks to John Maguire for feedback. 
 
 # References

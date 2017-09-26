@@ -1,4 +1,4 @@
-# MDP Environment for the OpenAI Gym
+# MDP environments for the OpenAI Gym
 
 This Python framework makes it very easy to specify simple MDPs.
 
@@ -24,7 +24,7 @@ A whitepaper is available at [docs/whitepaper.pdf](docs/whitepaper.pdf). Here is
 ```
 @techreport{blackhc.mdp,
     Author = {Andreas Kirsch},
-    Title = {An MDP environment for the OpenAI Gym},
+    Title = {MDP environments for the OpenAI Gym},
     Year = {2017},
     Url = {http://github.com/BlackHC/mdp/raw/master/docs/whitepaper.pdf}
 }
@@ -79,7 +79,7 @@ The DSL is based on the following grammar (using EBNF[@ebnf]):
 For a given state and action, outcomes can be specified. Outcomes are state transitions or rewards.
 If multiple state transitions or rewards are specified for the same state and action, the MDP is non-deterministic and the state transition (or reward) are determined using a categorical distribution. By default, each outcome is weighted uniformly, except if specified otherwise by either having duplicate transitions or by using an explicit weight factor. 
 
-For example, to specify that a state receives a reward of +1 or -1 with equal probability and does not change states with probability $3/4$ and only transitions to the next state with probability $1/4$, we could write:
+For example, to specify that a state receives a reward of +1 or -1 with equal probability and does not change states with probability 3/4 and only transitions to the next state with probability 1/4, we could write:
    
 ```python
 state & action > dsl.reward(-1.) | dsl.reward(1.)
