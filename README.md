@@ -20,13 +20,13 @@ python setup.py test
 
 ## Whitepaper
 
-A whitepaper is available at [docs/whitepaper.pdf](docs/whitepaper.pdf). Here is a BibTeX entry that you can use in publications (or download [CITE_ME.bib](CITE_ME.bib)):
+A whitepaper is available at <https://arxiv.org/abs/1709.09069>. Here is a BibTeX entry that you can use in publications (or download [CITE_ME.bib](CITE_ME.bib)):
 ```
 @techreport{blackhc.mdp,
     Author = {Andreas Kirsch},
     Title = {MDP environments for the OpenAI Gym},
     Year = {2017},
-    Url = {http://github.com/BlackHC/mdp/raw/master/docs/whitepaper.pdf}
+    Url = {https://arxiv.org/abs/1709.09069}
 }
 ```
 
