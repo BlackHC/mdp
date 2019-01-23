@@ -272,14 +272,14 @@ class MDPEnv(gym.Env):
         self.action_space = gym.spaces.Discrete(self.mdp.num_actions)
         self.start_state = start_state or list(self.mdp.states)[0]
 
-    def _reset(self):
+    def reset(self):
         self._previous_state = None
         self._previous_action = None
         self._state = self.start_state
         self._is_done = self._state.terminal_state
         return self._state.index
 
-    def _step(self, action_index):
+    def step(self, action_index):
         action = self.mdp.actions[action_index]
         self._previous_state = self._state
         self._previous_action = action
@@ -301,7 +301,7 @@ class MDPEnv(gym.Env):
                                   highlight_next_state=self._state)
         return graph
 
-    def _render(self, mode='human', close=False):
+    def render(self, mode='human', close=False):
         if close:
             if self.render_widget:
                 self.render_widget.close()
