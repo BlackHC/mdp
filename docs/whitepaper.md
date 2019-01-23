@@ -53,8 +53,11 @@ The DSL is based on the following grammar (using EBNF[@ebnf]):
 
     TRANSITION ::= STATE '&' ACTION '>' OUTCOME
     OUTCOME ::= (REWARD | STATE) ['*' WEIGHT]
+    
     ALTERNATIVES ::= ALTERNATIVE ('|' ALTERNATIVE)* 
     
+See below for how alternatives work. Alternatives can be used in place of states, actions and outcomes, and comprise of states, actions and outcomes.
+
 For a given state and action, outcomes can be specified. Outcomes are state transitions or rewards.
 If multiple state transitions or rewards are specified for the same state and action, the MDP is non-deterministic and the state transition (or reward) are determined using a categorical distribution. By default, each outcome is weighted uniformly, except if specified otherwise by either having duplicate transitions or by using an explicit weight factor. 
 
