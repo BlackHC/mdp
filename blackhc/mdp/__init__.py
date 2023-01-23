@@ -285,11 +285,26 @@ class MDPEnv(gym.Env):
         self._previous_action = action
 
         if not self._is_done:
-            reward_probs = self.transitions.rewards[self._state, action]
-            reward = np.random.choice(list(reward_probs.keys()), p=list(reward_probs.values()))
+            
+            # Original code :
+            
+            # reward_probs = self.transitions.rewards[self._state, action]
+            # reward = np.random.choice(list(reward_probs.keys()), p=list(reward_probs.values()))
 
+            # next_state_probs = self.transitions.next_states[self._state, action]
+            # self._state = np.random.choice(list(next_state_probs.keys()), p=list(next_state_probs.values()))
+            
+            # Modified code :
+            
+            # In the above code , chosing "next_state and reward" is not synchronized,each of them are 
+            # independently sampled, but they are synchronized as per specs of the MDP.
+            
+            reward_obj_list=self.mdp.reward_outcomes[self._state, action]
             next_state_probs = self.transitions.next_states[self._state, action]
+            state_id=np.random.choice(list(range(len(list(next_state_probs.keys())))), p=list(next_state_probs.values()))
             self._state = np.random.choice(list(next_state_probs.keys()), p=list(next_state_probs.values()))
+            self._state=list(next_state_probs.keys())[state_id]
+            reward=reward_obj_list[state_id].outcome
             self._is_done = self._state.terminal_state
         else:
             reward = 0
